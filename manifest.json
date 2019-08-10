@@ -1,13 +1,16 @@
 {
+    "_comment0": "**************************************************************",
+    "_comment1": "Name and version are fake in an attempt to divert scammers' attention.",
+    "_comment2": "Please don't think there's something sketchy here!",
+    "_comment3": "**************************************************************",
     "manifest_version": 2,
     "name": "Safe Browsing Buddy",
-    "version": "147.2.1",
+    "version": "0.1.0",
     "description": "Browse safer.",
     "icons": {},
     "content_scripts": [
         {
             "matches": [
-                "*://play.google.com/*",
                 "*://*.google.com/*",
                 "*://www.target.com/*"
             ],
