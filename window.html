@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        :root {
+            background: #069;
+            color: #fff;
+        }
+
+        body {
+            width: 350px;
+            height: 350px;
+            display: flex;
+            text-align: center;
+        }
+
+        div.content {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content>div {
+            padding: .75rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .subtext {
+            font-size: .85rem;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        .subtext>span {
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .button {
+            display: inline-block;
+            height: 7rem;
+            width: 7rem;
+            background: #d00;
+            border-radius: 50%;
+
+            border-width: 10px;
+            border-color: #fff;
+            border-style: solid;
+        }
+
+        .button:hover {
+            cursor: pointer;
+            background: #a00;
+        }
+
+        .button.enabled {
+            background: #0c0;
+        }
+
+        .button.enabled:hover {
+            background: #0a0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <span class="title">Safe Browsing Buddy</span>
+        <div>
+            <span class="button enabled" id="button"></span>
+        </div>
+        <span class="subtext">Currently <span id="status">abled</span>!!</span>
+    </div>
+
+    <script src="window.js"></script>
+</body>
+
+</html>
