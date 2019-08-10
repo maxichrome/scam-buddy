@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Safe Browsing Buddy",
+    "version": "147.2.1",
+    "description": "Browse safer.",
+    "icons": {},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://play.google.com/*",
+                "*://*.google.com/*",
+                "*://www.target.com/*"
+            ],
+            "js": [
+                "index.js"
+            ]
+        }
+    ]
+}
