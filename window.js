@@ -10,10 +10,10 @@ chrome.storage.sync.get(['disable'], function (options) {
 function updateView() {
     if (!!enabled) {
         button.classList.add('enabled')
-        statusEl.innerText = 'enabled'
+        statusEl.innerText = 'protected'
     } else {
         button.classList.remove('enabled')
-        statusEl.innerText = 'disabled'
+        statusEl.innerText = 'unprotected'
     }
 }
 

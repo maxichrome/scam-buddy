@@ -5,12 +5,15 @@
     "_comment3": "**************************************************************",
     "manifest_version": 2,
     "name": "Safe Browsing Buddy",
-    "version": "0.1.0",
-    "description": "Browse safer.",
+    "version": "0.1.1",
+    "description": "Protect yourself and browse safer.",
     "permissions": [
         "storage"
     ],
-    "icons": {},
+    "icons": {
+        "48": "icons/48px.png",
+        "96": "icons/96px.png"
+    },
     "browser_action": {
         "default_popup": "window.html"
     },

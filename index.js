@@ -6,7 +6,7 @@ let settings
 
 chrome.storage.sync.get(['disable'], function (options) {
     if (typeof options.disable === 'undefined') {
-        chrome.storage.sync.set({ disable: false })
+        chrome.storage.sync.set({disable: false})
         oprions.disable = false
         disable = false
     } else
@@ -68,10 +68,9 @@ function execute() {
             const content = document.querySelector('div[data-component="pagetitle"] > div > div:nth-of-type(3)')
             const title = document.querySelector('div[data-component="pagetitle"] > div > div:nth-of-type(2) > h1')
 
-            let balance = 20
             let cardNumber = 1234
 
-            title.innerHTML = 'check and redeem Gift Card balance'
+            title.innerHTML = 'Check and redeem a Gift Card balance'
             // button.innerText = 'check balance'
 
             addCustomStyle(
@@ -119,10 +118,23 @@ function execute() {
                 margin-left: auto;
                 margin-right: auto;
             }
+            
+            .redeem-button {
+                margin-left: auto;
+                margin-right: auto;
+                
+                width: 300px;
+            }
+            
+            .container-style * {
+                box-sizing: border-box;
+            }
             `)
 
+            content.classList.add("container-style")
+
             const generateContent = (content, buttons) => `
-            <div class="h-bg-grayLight h-margin-t-wide h-margin-b-default Row-uds8za-0 gnKDVb">
+            <div class="h-bg-grayLight h-margin-t-wide h-margin-b-default Row-uds8za-0 gnKDVb" style="padding: 20px 40px;">
                 <div class="h-margin-v-jumbo Col-favj32-0 fkooDP card">
                     <div class="styles__GiftCardBox-so05ob-0 bFCFuV">
                         <div class="h-text-left Grid-sc-1825pi3-0 dUwxNs flex-col">
@@ -209,13 +221,13 @@ function execute() {
                         `No recent transactions on this card.`
                     ],
                     [
-                        `<button id="saveToAccount" type="button" name="saveToAccount"  class="Button-bwu3xu-0 eJIvTL">`
+                        `<button id="saveToAccount" type="button" name="saveToAccount"  class="Button-bwu3xu-0 fXdbOr redeem-button">`
                         + 'check another card'
                         + `</button>`,
 
-                        `<button id="checkAnotherGiftCard" type="button" name="checkAnotherGiftCard" class="Button-bwu3xu-0 iFUfKr">`
+                        `<button id="checkAnotherGiftCard" type="button" name="checkAnotherGiftCard" class="Button-bwu3xu-0 fXdbOr redeem-button">`
                         + 'redeem card'
-                        + `</button>`
+                        + `</button>`,
                     ])
 
                 setTimeout(function () {
@@ -227,7 +239,9 @@ function execute() {
                     redeemButton.innerText = 'redeem card'
 
                     refreshButton.innerText = 'check another card'
-                    refreshButton.onclick = function (event) { location.reload() }
+                    refreshButton.onclick = function () {
+                        location.reload()
+                    }
 
                     redeemButton.onclick = function (event) {
                         event.preventDefault()
@@ -240,17 +254,17 @@ function execute() {
                             content.innerHTML =
                                 generateContent(
                                     [
-                                        `This balance has been redeemed!`,
-                                        `Your new account balance is <strong>$${amount}.00</strong>`
+                                        `This card has been redeemed!`,
+                                        `<strong>$${amount}.00</strong> was added to your balance.`
                                     ],
                                     [
-                                        `<button id="checkAnotherGiftCard" onclick="location.reload()" type="button" name="saveToAccount" class="Button-bwu3xu-0 bGPuyX">`
+                                        `<button id="checkAnotherGiftCard" onclick="location.reload()" type="button" name="saveToAccount" class="Button-bwu3xu-0 fXdbOr redeem-button">`
                                         + 'check another card'
                                         + `</button>`
                                     ])
                         }, 5500 * Math.random())
                     }
-                }, 1500)
+                }, 2000)
 
                 return false
             }

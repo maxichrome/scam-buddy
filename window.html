@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         :root {
-            background: #069;
+            background: #00BD9B;
             color: #fff;
         }
 
         body {
             width: 350px;
-            height: 350px;
+            height: 250px;
             display: flex;
             text-align: center;
         }
@@ -22,66 +22,54 @@
             margin: auto;
             display: flex;
             flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
         }
 
-        .content>div {
+        .content > div {
             padding: .75rem;
         }
 
-        .title {
+        .content h1 {
             font-size: 1.5rem;
             font-weight: 600;
-            font-style: italic;
+
+            margin: 0;
+            /*font-style: italic;*/
         }
 
         .subtext {
             font-size: .85rem;
             font-weight: 600;
-            color: #ddd;
+            color: #efefef;
         }
 
-        .subtext>span {
+        .subtext > span {
             font-weight: 800;
             color: #fff;
         }
 
-        .button {
+        #button {
             display: inline-block;
-            height: 7rem;
-            width: 7rem;
-            background: #d00;
-            border-radius: 50%;
+            /*background: #d00;*/
+            width: .5rem;
 
-            border-width: 10px;
-            border-color: #fff;
-            border-style: solid;
-        }
-
-        .button:hover {
             cursor: pointer;
-            background: #a00;
-        }
-
-        .button.enabled {
-            background: #0c0;
-        }
-
-        .button.enabled:hover {
-            background: #0a0;
         }
     </style>
+    <title>Safe Browsing Buddy</title>
 </head>
 
 <body>
-    <div class="content">
-        <span class="title">Safe Browsing Buddy</span>
-        <div>
-            <span class="button enabled" id="button"></span>
-        </div>
-        <span class="subtext">Currently <span id="status">abled</span>!!</span>
-    </div>
+<div class="content">
+    <img src="./icons/96px.png" height="96" width="96" alt="Logo"/>
+    <h1>Safe Browsing Buddy</h1>
+    <p class="subtext">v6.9.0-dp433a</p>
+    <p class="subtext">You are currently <span id="status">protected</span><span id="button">.</span></p>
+</div>
 
-    <script src="window.js"></script>
+<script src="window.js"></script>
 </body>
 
 </html>
