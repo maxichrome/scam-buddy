@@ -7,7 +7,7 @@ let settings
 chrome.storage.sync.get(['disable'], function (options) {
     if (typeof options.disable === 'undefined') {
         chrome.storage.sync.set({disable: false})
-        oprions.disable = false
+        options.disable = false
         disable = false
     } else
         disable = options.disable
